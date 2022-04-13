@@ -1,65 +1,68 @@
 class Main {
-
 	public static void main(String[] args) {
-		// 【問題】指定された変数を宣言、初期化し、
-		//         正しく計算式が表示されるようにしましょう。
+		// L2 char 2 干支の問題 不可
+		//	【問題】十二支それぞれの動物を使うことわざを表示させてみましょう。
 
+		//	char型の変数「japaneseZodiac」に'子'を格納しました。
+		char japaneseZodiac = '子';
 
-		//★float型の変数「x1」を宣言し、「2.8」で初期化しましょう。★
-        float x1 = 2.8;
+		//	switch文を利用して、それぞれの干支に対応することわざを表示させてみましょう。
+		//★以下のswitch文の対象文字列に「japaneseZodiac」を指定してみましょう。
+		switch	(japaneseZodiac) {
+			//	（例）「子」の場合
+			case '子':
+				System.out.println("窮鼠猫を噛む");
+				break;
+			//★	上記の例を参考に、他の十二支についてもcaseを追加してみましょう。
+			//	なお対応する干支とことわざは以下の通りです。
+			//	巳:蛇に睨まれた蛙
+			case '巳':
+				System.out.println("蛇に睨まれた蛙");
+				break;
+			//	午:馬の耳に念仏
+			case '午':
+				System.out.println("馬の耳に念仏");
+				break;
+			//	未:屠所の羊
+			case '未':
+				System.out.println("屠所の羊");
+				break;
+			//	申:猿に烏帽子
+			case '申':
+				System.out.println("猿に烏帽子");
+				break;
+			//	酉:鶏群の一鶴
+			case '酉':
+				System.out.println("鶏群の一鶴");
+				break;
+			//	戌:負け犬の遠吠え
+			case '戌':
+				System.out.println("負け犬の遠吠え");
+				break;
+			//	亥:遼東の豕
+			case '亥':
+				System.out.println("遼東の豕");
+				break;
+			//	（例）「丑」の場合
+			case '丑':
+				System.out.println("九牛の一毛");
+				break;
+			//	（例）「寅」の場合
+			case '寅':
+				System.out.println("虎の威を借る狐");
+				break;
+			//	（例）「卯」の場合
+			case '卯':
+				System.out.println("兎の上り坂");
+				break;
+			//	（例）「辰」の場合
+			case '辰':
+				System.out.println("画竜点睛を欠く");
+				break;
 
-		//★float型の変数「y1」を宣言し、「3.4」で初期化しましょう。★
-        float y1 = 3.4;
+		}
 
-		//★double型の変数「xy1」を宣言し、
-		// 「x1」掛ける「y1」の結果で初期化しましょう。★
-        double xy1 = x1 * y1;
-
-		//  xy1に格納される値は浮動小数点型の仕様で小数第3位以降まで
-		//  存在しているため、xy1の値を小数第3位で四捨五入します。
-		xy1 = ((double)Math.round(xy1 * 100)) / 100;
-
-		//  計算結果を表示します。
-		System.out.println(x1 + " × " + y1 + " = " + xy1);
-
-
-		//★double型の変数「x2」を宣言し、「6,3」で初期化しましょう。★
-        double x2 = 6.3;
-
-		//★double型の変数「y2」を宣言し、「4.5」で初期化しましょう。★
-        double y2 = 4.5;
-
-		//★float型の変数「xy2」を宣言し、
-		// 「x2」掛ける「y2」の結果で初期化しましょう。
-		// 「x2」「y2」はそれぞれfloat型にキャストしましょう。★
-        float xy2 = (float)x2 * (float)y2;
-
-		//	xy2に格納される値は浮動小数点型の仕様で小数第3位以降まで
-		//  存在しているため、xy2の値を小数第3位で四捨五入します。
-		xy2 = ((float)Math.round(xy2 * 100)) / 100;
-
-		//  計算結果を表示します。
-		System.out.println(x2 + " × " + y2 + " = " + xy2);
-
-
-		//★double型の変数「x3」を宣言し、「3.6」で初期化しましょう。★
-        double x3 = 3.6;
-
-		//★float型の変数「y3」を宣言し、「8.2」で初期化しましょう。★
-        float y3 = 8.2;
-
-		//★float型の変数「xy3」を宣言し、
-		// 「x3」掛ける「y3」の結果で初期化しましょう。
-		// 「x3」はfloat型にキャストしましょう。★
-        float xy3 = x3.floatValue() * y3;
-
-		//  xy3に格納される値は浮動小数点型の仕様で小数第3位以降まで
-		//  存在しているため、xy3の値を小数第3位で四捨五入します。
-		xy3 = ((float)Math.round(xy3 * 100)) / 100;
-
-		//  計算結果を表示します。
-		System.out.println(x3 + " × " + y3 + " = " + xy3);
-
+		//	実行して確認したら、「japaneseZodiac」に他の十二支の動物に変えてみましょう。
+		//
 	}
-
 }
