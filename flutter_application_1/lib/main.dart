@@ -1,37 +1,70 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter',
-      theme: ThemeData.light().copyWith(
-        primaryColor: Colors.blue),
-      darkTheme: ThemeData.dark().copyWith(
-        primaryColor: Colors.blue),
-      home: const MyHomePage(
-        title: 'testアプリケーションだよ',
-        ),
+    return ChangeNotifierProvider(
+      create: (_) => MyTheme(),
+      child: Consumer<MyTheme>(
+        builder: (context, theme, _) {
+          return MaterialApp(
+            theme: theme.current,
+            home: MyHomePage(title: 'Example'),
+          );
+        },
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+// テーマ変更用の状態クラス
+class MyTheme extends ChangeNotifier {
+  ThemeData current = ThemeData.light();
+  bool _isDark = false;
+
+  // トグルでテーマを切り替える関数
+  toggle() {
+    _isDark = !_isDark;
+    current = _isDark ? ThemeData.dark() : ThemeData.light();
+    notifyListeners();
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('テーマ切替テスト'),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed:  () {
+          Provider.of<MyTheme>(context, listen: false).toggle();
+        },
+        child: Icon(Icons.autorenew),
+      ),
+    );
+  }
+  // State<MyHomePage> createState() => _MyHomePageState();
 }
 
+/*
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -69,3 +102,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
