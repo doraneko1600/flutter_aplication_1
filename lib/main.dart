@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter/material.dart';
+import 'components/importer.dart';
 
 void main() => runApp(MyApp());
 
