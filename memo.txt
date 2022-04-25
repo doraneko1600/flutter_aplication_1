@@ -1,5 +1,2 @@
-flutter
-・簡単掲示板
-・kittingアプリ
-・youtube、ニコニコ、テレビの放送時間リスト作成アプリ
-・同上の保存、おすすめリスト
+ディレクトリ構成
+https://qiita.com/tanakeiQ/items/2c4a7fcb8e95b9aa55ad
