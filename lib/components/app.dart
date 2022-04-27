@@ -1,101 +1,55 @@
 import 'importer.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Flutter Code Sample';
+
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => MyTheme(),
-      child: Consumer<MyTheme>(
-        builder: (context, theme, _) {
-          return MaterialApp(
-            theme: theme.current,
-            home: MyHomePage(title: 'Example'),
-          );
-        },
-      ),
+    return const CupertinoApp(
+      title: _title,
+      home: MyStatefulWidget(),
     );
   }
 }
 
-// テーマ変更用の状態クラス
-class MyTheme extends ChangeNotifier {
-  ThemeData current = ThemeData.light();
-  bool _isDark = false;
-
-  // トグルでテーマを切り替える関数
-  toggle() {
-    _isDark = !_isDark;
-    current = _isDark ? ThemeData.dark() : ThemeData.light();
-    notifyListeners();
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('テーマ切替テスト'),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed:  () {
-          Provider.of<MyTheme>(context, listen: false).toggle();
-        },
-        child: Icon(Icons.autorenew),
-      ),
-    );
-  }
-  // State<MyHomePage> createState() => _MyHomePageState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-/*
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.person),
+            label: 'ユーザー',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.home),
+            label: 'ホーム',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.search),
+            label: '検索',
+          ),
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: '追加する',
-        child: const Icon(Icons.add),
-      ), 
+      tabBuilder: (BuildContext context, int index) {
+        return CupertinoTabView(
+          builder: (BuildContext context) {
+            return Center(
+              child: Text('Content of tab $index'),
+            );
+          },
+        );
+      },
     );
   }
 }
-*/
