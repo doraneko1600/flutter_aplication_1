@@ -1,8 +1,10 @@
 import 'importer.dart';
 
+// mainから実行される関数
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // タブタイトル
   static const String _title = 'Flutter Code Sample Cupertino';
 
   @override
