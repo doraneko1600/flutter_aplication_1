@@ -1,4 +1,5 @@
 import 'importer.dart';
+import '../common/bottom_navigation.dart';
 
 // mainから実行される関数
 class MyApp extends StatelessWidget {
@@ -19,40 +20,7 @@ class MyApp extends StatelessWidget {
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
+  BottomNavigationBar bottomNav = _BottomNavigationBar();
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  @override
-  int currentIndex = 1;
-  Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
-            label: 'ユーザー',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'ホーム',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: '検索',
-          ),
-        ],
-      ),
-      tabBuilder: (BuildContext context, int index) {
-        return CupertinoTabView(
-          builder: (BuildContext context) {
-            return Center(
-              child: Text('Content of tab $index'),
-            );
-          },
-        );
-      },
-    );
-  }
+  State<MyStatefulWidget> createState() => _BottomNavigationBar();
 }
