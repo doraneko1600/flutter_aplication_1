@@ -1,7 +1,7 @@
 import '../components/importer.dart';
 import '../components/app.dart';
 
-class _BottomNavigationBar extends State<MyStatefulWidget> {
+class BottomNavigationBar extends State<MyStatefulWidget> {
   @override
   int currentIndex = 1;
   Widget build(BuildContext context) {

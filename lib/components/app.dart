@@ -21,5 +21,5 @@ class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _BottomNavigationBar();
+  State<MyStatefulWidget> createState() => BottomNavigationBar();
 }
