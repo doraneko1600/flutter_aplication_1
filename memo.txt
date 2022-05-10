@@ -1,2 +1,6 @@
 ディレクトリ構成
 https://qiita.com/tanakeiQ/items/2c4a7fcb8e95b9aa55ad
+
+命名規則
+https://de-milestones.com/dart_naming_convention/
+出退勤管理アプリ
