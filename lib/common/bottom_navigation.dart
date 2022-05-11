@@ -1,5 +1,6 @@
 import '../components/importer.dart';
 import '../components/app.dart';
+import '../components/user/user.dart';
 
 const userIcon = CupertinoIcons.person; // ユーザーアイコン
 const homeIcon = CupertinoIcons.home; // ホームアイコン
@@ -25,17 +26,37 @@ class BottomNavigationBar extends State<MyStatefulWidget> {
           ),
         ],
       ),
-      tabBuilder: (BuildContext context, int index) {
+      tabBuilder: (context, index) {
         switch (index) {
-          case 0:
-            return CupertinoPageScaffold(
-              navigationBar: CupertinoNavigationBar(
-                leading: Icon(userIcon),
-              ),
-              child: UserScreen(),
-            );
+          case 0: // 一番左のタブ
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                navigationBar: CupertinoNavigationBar(
+                  leading: Icon(userIcon),
+                ),
+                child: UserPage(),
+              );
+            });
+          case 1: // 一番左のタブ
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                navigationBar: CupertinoNavigationBar(
+                  leading: Icon(userIcon),
+                ),
+                child: UserPage(),
+              );
+            });
+          case 3: // 一番左のタブ
+            return CupertinoTabView(builder: (context) {
+              return CupertinoPageScaffold(
+                navigationBar: CupertinoNavigationBar(
+                  leading: Icon(userIcon),
+                ),
+                child: UserPage(),
+              );
+            });
         }
-      },
+      }
     );
   }
 }

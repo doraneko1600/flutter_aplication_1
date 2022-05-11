@@ -1,4 +1,4 @@
-import 'importer.dart';
+import 'package:flutter_application_1/components/importer.dart';
 import '../common/bottom_navigation.dart';
 
 // mainから実行される関数
