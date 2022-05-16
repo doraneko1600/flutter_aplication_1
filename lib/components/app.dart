@@ -1,4 +1,5 @@
 import 'package:flutter_application_1/components/importer.dart';
+import 'package:flutter_application_1/components/user/user.dart';
 import '../common/bottom_navigation.dart';
 
 // mainから実行される関数
@@ -12,14 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: BottomNavigationBar(),
     );
   }
-}
-
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => BottomNavigationBar();
 }

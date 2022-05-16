@@ -6,7 +6,13 @@ const userIcon = CupertinoIcons.person; // ユーザーアイコン
 const homeIcon = CupertinoIcons.home; // ホームアイコン
 const searchIcon = CupertinoIcons.search; // 検索アイコン
 
-class BottomNavigationBar extends State<MyStatefulWidget> {
+class BottomNavigationBar extends StatefulWidget {
+  const BottomNavigationBar({Key? key}) : super(key: key);
+
+  @override
+  State<BottomNavigationBar> createState() => _BottomNavigationBarState();
+}
+class _BottomNavigationBarState extends State<BottomNavigationBar> {
   // ページインデックス保存用
   int _screen = 0;
   // 表示する Widget の一覧
@@ -19,16 +25,16 @@ class BottomNavigationBar extends State<MyStatefulWidget> {
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
       BottomNavigationBarItem(
-        icon: Icon(Icons.book),
-        label: 'Book',
+        icon: Icon(userIcon),
+        label: 'ユーザー',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.cloud),
-        label: 'Cloud',
+        icon: Icon(homeIcon),
+        label: 'ホーム',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.cake),
-        label: 'Cake',
+        icon: Icon(searchIcon),
+        label: '検索',
       ),
     ];
   }

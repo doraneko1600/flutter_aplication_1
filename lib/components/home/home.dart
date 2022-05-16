@@ -1,19 +1,19 @@
 import '../importer.dart';
 
-class UserPage extends StatefulWidget {
-  const UserPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<UserPage> createState() => _UserPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _UserPageState extends State<UserPage> {
+class _HomePageState extends State<HomePage> {
   int _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('user page')),
+      navigationBar: const CupertinoNavigationBar(middle: Text('home page')),
       child: ListView(
         children: <Widget>[
           CupertinoButton(
