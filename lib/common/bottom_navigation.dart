@@ -29,14 +29,11 @@ class BottomNavigationBar extends State<MyStatefulWidget> {
       tabBuilder: (context, index) {
         switch (index) {
           case 0: // 一番左のタブ
-            return CupertinoTabView(builder: (context) {
-              return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  leading: Icon(userIcon),
-                ),
-                child: UserPage(),
-              );
-            });
+            return Container(
+              child: Text('Settings'),
+              alignment: Alignment.center,
+              color: Colors.green[100],
+            );
           case 1: // 一番左のタブ
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
