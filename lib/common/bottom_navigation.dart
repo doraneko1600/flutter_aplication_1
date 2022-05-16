@@ -7,6 +7,31 @@ const homeIcon = CupertinoIcons.home; // ホームアイコン
 const searchIcon = CupertinoIcons.search; // 検索アイコン
 
 class BottomNavigationBar extends State<MyStatefulWidget> {
+  // ページインデックス保存用
+  int _screen = 0;
+  // 表示する Widget の一覧
+  static List<Widget> _pageList = [
+    UserPage(),
+    CloudScreen(),
+    CakeScreen()
+  ];
+  // ページ下部に並べるナビゲーションメニューの一覧
+  List<BottomNavigationBarItem> myBottomNavBarItems() {
+    return [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.book),
+        label: 'Book',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.cloud),
+        label: 'Cloud',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.cake),
+        label: 'Cake',
+      ),
+    ];
+  }
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
