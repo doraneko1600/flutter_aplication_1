@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('home page')),
+      // navigationBar: const CupertinoNavigationBar(middle: Text('home page')),
       child: ListView(
         children: <Widget>[
           CupertinoButton(

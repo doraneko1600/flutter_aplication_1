@@ -1,6 +1,8 @@
 import '../components/importer.dart';
 import '../components/app.dart';
 import '../components/user/user.dart';
+import '../components/home/home.dart';
+import '../components/search/search.dart';
 
 const userIcon = CupertinoIcons.person; // ユーザーアイコン
 const homeIcon = CupertinoIcons.home; // ホームアイコン
@@ -12,15 +14,16 @@ class BottomNavigationBar extends StatefulWidget {
   @override
   State<BottomNavigationBar> createState() => _BottomNavigationBarState();
 }
+
 class _BottomNavigationBarState extends State<BottomNavigationBar> {
   // ページインデックス保存用
   int _screen = 0;
   // 表示する Widget の一覧
   static List<Widget> _pageList = [
     UserPage(),
-    CloudScreen(),
-    CakeScreen()
-  ];
+    HomePage(),
+    SearchPage()
+    ];
   // ページ下部に並べるナビゲーションメニューの一覧
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
@@ -38,53 +41,12 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> {
       ),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(userIcon),
-            label: 'ユーザー',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(homeIcon),
-            label: 'ホーム',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(searchIcon),
-            label: '検索',
-          ),
-        ],
-      ),
-      tabBuilder: (context, index) {
-        switch (index) {
-          case 0: // 一番左のタブ
-            return Container(
-              child: Text('Settings'),
-              alignment: Alignment.center,
-              color: Colors.green[100],
-            );
-          case 1: // 一番左のタブ
-            return CupertinoTabView(builder: (context) {
-              return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  leading: Icon(userIcon),
-                ),
-                child: UserPage(),
-              );
-            });
-          case 3: // 一番左のタブ
-            return CupertinoTabView(builder: (context) {
-              return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  leading: Icon(userIcon),
-                ),
-                child: UserPage(),
-              );
-            });
-        }
-      }
+    return CupertinoPageScaffold(
+      // ページビュー
+      body: _pageList[_screen],
     );
   }
 }
