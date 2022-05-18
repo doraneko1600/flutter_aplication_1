@@ -1,4 +1,4 @@
 import 'components/importer.dart';
 import 'components/app.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MainApp());

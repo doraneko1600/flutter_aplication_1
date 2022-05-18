@@ -1,101 +1,19 @@
-import 'importer.dart';
+import 'package:flutter_application_1/components/importer.dart';
+import 'package:flutter_application_1/components/user/user.dart';
+import '../common/bottom_navigation.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => MyTheme(),
-      child: Consumer<MyTheme>(
-        builder: (context, theme, _) {
-          return MaterialApp(
-            theme: theme.current,
-            home: MyHomePage(title: 'Example'),
-          );
-        },
-      ),
-    );
-  }
-}
+// mainから実行される関数
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
-// テーマ変更用の状態クラス
-class MyTheme extends ChangeNotifier {
-  ThemeData current = ThemeData.light();
-  bool _isDark = false;
-
-  // トグルでテーマを切り替える関数
-  toggle() {
-    _isDark = !_isDark;
-    current = _isDark ? ThemeData.dark() : ThemeData.light();
-    notifyListeners();
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  // タブタイトル
+  static const String _title = 'Flutter Code Sample Cupertino';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('テーマ切替テスト'),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed:  () {
-          Provider.of<MyTheme>(context, listen: false).toggle();
-        },
-        child: Icon(Icons.autorenew),
-      ),
-    );
-  }
-  // State<MyHomePage> createState() => _MyHomePageState();
-}
-
-/*
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: '追加する',
-        child: const Icon(Icons.add),
-      ), 
+    return const CupertinoApp(
+      title: _title,
+      home: BottomNavigationBar(),
     );
   }
 }
-*/
