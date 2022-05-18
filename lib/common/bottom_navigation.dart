@@ -45,8 +45,16 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      // ページビュー
-      body: _pageList[_screen],
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Sample Code'),
+      ),
+      child: ListView(
+        children: <Widget>[
+          Center(
+            child: Text('テスト'),
+          ),
+        ],
+      ),
     );
   }
 }
