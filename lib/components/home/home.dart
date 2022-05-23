@@ -31,7 +31,14 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
-                      child: Button();
+                      child: ElevatedButton(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        child: const Text(
+                          'Button',
+                        ),
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: () {
