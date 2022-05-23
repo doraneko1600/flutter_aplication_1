@@ -4,68 +4,42 @@ import '../components/user/user.dart';
 import '../components/home/home.dart';
 import '../components/search/search.dart';
 
-class Root extends StatefulWidget {
-  const Root({Key? key}) : super(key: key);
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<Root> createState() => _RootState();
+  State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _RootState extends State<Root> {
-  int _currentIndex = 0;
+class _BottomNavigationState extends State<BottomNavigation> {
   final _pageWidgets = [
     //bodyの部分をここで設定
     const HomePage(),
     const UserPage(),
   ];
 
+  // 初期選択
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(43.0),
-        child: AppBar(
-          title: const Text('タイトル'),
-          elevation: 0,
-        ),
-      ),
-      body: _pageWidgets.elementAt(
-        _currentIndex,
-      ),
-      bottomNavigationBar: Container(
-        height: 48,
-        decoration: const BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: Colors.black,
-              width: 0.1,
-            ),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            GestureDetector(
-              onTap: () {
-                _onItemTapped(0);
-              },
-              child: const Icon(
-                Icons.home,
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                _onItemTapped(1);
-              },
-              child: const Icon(
-                Icons.person,
-              ),
-            ),
+      body: _pageWidgets[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'ホーム'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'アカウント'),
           ],
-        ),
-      ),
+          type: BottomNavigationBarType.fixed,
+        )
     );
   }
-
-  void _onItemTapped(int index) => setState(() => _currentIndex = index);
 }

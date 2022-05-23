@@ -3,4 +3,14 @@ https://qiita.com/tanakeiQ/items/2c4a7fcb8e95b9aa55ad
 
 命名規則
 https://de-milestones.com/dart_naming_convention/
+
 出退勤管理アプリ
+
+☆やってみること
+DB(firebase)とのやりとり
+マテリアルデザインの勉強
+Appの使用
+ディレクトリ構造、命名規則を守る
+画面遷移図の作成、その通りに作る
+画像の使用、保存
+
