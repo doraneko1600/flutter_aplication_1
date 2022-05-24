@@ -12,7 +12,7 @@ class ElevatedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('出勤');
+        print(title);
       },
       child: Text(
         title,
