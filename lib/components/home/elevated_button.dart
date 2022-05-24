@@ -8,7 +8,6 @@ class ElevatedButtonWidget extends StatelessWidget {
 
   final String title;
   @override
-  // オブジェクト引数を使用
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
