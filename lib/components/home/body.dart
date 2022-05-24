@@ -1,4 +1,5 @@
 import '../importer.dart';
+import 'elevated_button.dart';
 
 class HomePageBody extends StatefulWidget {
   const HomePageBody({Key? key}) : super(key: key);
@@ -24,14 +25,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                 children: [
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print('出勤');
-                      },
-                      child: const Text(
-                        '出勤',
-                      ),
-                    ),
+                    child: ElevatedButtonWidget(title: "出勤"),
                   ),
                   ElevatedButton(
                     onPressed: () {
