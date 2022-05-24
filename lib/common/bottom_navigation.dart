@@ -1,8 +1,7 @@
 import '../components/importer.dart';
-import '../components/app.dart';
+// import '../components/app.dart';
 import '../components/user/user.dart';
 import '../components/home/home.dart';
-import '../components/search/search.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
