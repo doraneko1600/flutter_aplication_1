@@ -22,19 +22,12 @@ class _HomePageBodyState extends State<HomePageBody> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
                     child: ElevatedButtonWidget(title: "出勤"),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      print('退勤');
-                    },
-                    child: const Text(
-                      '退勤',
-                    ),
-                  ),
+                  ElevatedButtonWidget(title: "退勤"),
                 ],
               ),
             ),
@@ -43,26 +36,12 @@ class _HomePageBodyState extends State<HomePageBody> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print('休憩開始');
-                      },
-                      child: const Text(
-                        '休憩開始',
-                      ),
-                    ),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+                    child: ElevatedButtonWidget(title: "休憩開始"),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      print('休憩終了');
-                    },
-                    child: const Text(
-                      '休憩終了',
-                    ),
-                  ),
+                  ElevatedButtonWidget(title: "休憩終了"),
                 ],
               ),
             ),
