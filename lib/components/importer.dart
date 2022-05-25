@@ -17,3 +17,7 @@ export 'package:flutter_application_1/models/timecard.dart';
 
 // config内の定数
 export 'package:flutter_application_1/configs/constant.dart';
+
+// 位置情報取得
+export 'package:geolocator/geolocator.dart';
+export 'package:geocoding/geocoding.dart';
