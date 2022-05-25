@@ -1,4 +1,6 @@
-import '../importer.dart';
+import 'package:flutter_application_1/components/importer.dart';
+
+// bodyを切り出し
 import 'body.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
           'Page Title',
         ),
       ),
-      body: HomePageBody(),
+      body: const HomePageBody(),
     );
   }
 }
