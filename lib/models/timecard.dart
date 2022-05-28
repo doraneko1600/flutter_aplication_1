@@ -4,10 +4,10 @@ void timeCardSetDB(String title, String id) {
   // 現在の日時取得
   DateTime now = DateTime.now();
 
-  // 現在の日時から年、月日を抽出。文字列にキャスト
-  String year = DateFormat('yyyy').format(now).toString();
-  String days = DateFormat('MMdd').format(now).toString();
-  int time = 1220;
+  // 現在の日時から年、月日を取得
+  String year = DateFormat('yyyy').format(now);
+  String days = DateFormat('MMdd').format(now);
+  String time = DateFormat('HHmm').format(now);
 
   FirebaseFirestore.instance
       .collection(SettingsFirebase.collection)
