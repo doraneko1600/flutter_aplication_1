@@ -1,6 +1,7 @@
 import 'package:flutter_application_1/components/importer.dart';
 
 void timeCardSetDB(String title, String id) {
+  String location = getLocation();
   // 現在の日時取得
   DateTime now = DateTime.now();
 
@@ -14,5 +15,8 @@ void timeCardSetDB(String title, String id) {
       .doc(id)
       .collection(year)
       .doc(days)
-      .set({title: time});
+      .set({
+        title: time,
+        SettingsFirebase.location: location
+        });
 }

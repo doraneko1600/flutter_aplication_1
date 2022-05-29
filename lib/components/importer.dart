@@ -21,6 +21,8 @@ export 'package:flutter_application_1/configs/constant.dart';
 // 位置情報取得
 export 'package:geolocator/geolocator.dart';
 export 'package:geocoding/geocoding.dart';
+export 'package:flutter_application_1/services/position.dart';
+export 'package:flutter_application_1/models/get_location.dart';
 
 // 日付処理
 export 'package:intl/date_symbol_data_local.dart';
