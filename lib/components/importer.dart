@@ -26,3 +26,23 @@ export 'package:flutter_application_1/services/position.dart';
 // 日付処理
 export 'package:intl/date_symbol_data_local.dart';
 export 'package:intl/intl.dart' hide TextDirection;
+
+/**
+ * コモンフォルダ
+ */
+export 'package:flutter_application_1/common/bottom_navigation.dart';
+
+/**
+ * コンポーネントフォルダ
+ */
+// appページ
+export 'package:flutter_application_1/components/app.dart';
+
+// ユーザーページ
+export 'package:flutter_application_1/components/user/body.dart';
+export 'package:flutter_application_1/components/user/user.dart';
+
+// ホームページ
+export 'package:flutter_application_1/components/home/body.dart';
+export 'package:flutter_application_1/components/home/home.dart';
+export 'package:flutter_application_1/components/home/elevated_button.dart';

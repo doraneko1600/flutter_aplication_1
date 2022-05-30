@@ -1,8 +1,5 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-// bodyを切り出し
-import 'body.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -16,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Page Title',
+          'HomePage',
         ),
       ),
       body: const HomePageBody(),

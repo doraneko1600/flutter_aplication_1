@@ -1,8 +1,6 @@
 import 'package:flutter_application_1/components/importer.dart';
 
 Future<void> timeCardSetDB(String title, String id) async {
-  // String location = getLocation() as String;
-  // print(location);
   Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
   // print(position);

@@ -1,6 +1,4 @@
 import 'package:flutter_application_1/components/importer.dart';
-import '../common/bottom_navigation.dart';
-
 // mainから実行される関数
 class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);

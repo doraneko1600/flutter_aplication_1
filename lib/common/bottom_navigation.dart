@@ -1,6 +1,4 @@
-import '../components/importer.dart';
-import '../components/user/user.dart';
-import '../components/home/home.dart';
+import 'package:flutter_application_1/components/importer.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
