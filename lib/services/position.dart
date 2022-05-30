@@ -11,7 +11,7 @@ Future<Position> determinePosition() async {
   serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
     // 位置情報サービスが有効でない場合、続行できません。
-    // 位置情報にアクセスし、ユーザーに対して 
+    // 位置情報にアクセスし、ユーザーに対して
     // 位置情報サービスを有効にするようアプリに要請する。
     return Future.error('Location services are disabled.');
   }
@@ -25,14 +25,15 @@ Future<Position> determinePosition() async {
       return Future.error('Location permissions are denied');
     }
   }
-  
+
   // 永久に拒否されている場合のエラーを返す
   if (permission == LocationPermission.deniedForever) {
     return Future.error(
-      'Location permissions are permanently denied, we cannot request permissions.');
-  } 
+        'Location permissions are permanently denied, we cannot request permissions.');
+  }
 
   // ここまでたどり着くと、位置情報に対しての権限が許可されているということなので
   // デバイスの位置情報を返す。
+  print(Geolocator.getCurrentPosition());
   return await Geolocator.getCurrentPosition();
 }

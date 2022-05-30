@@ -1,7 +1,11 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-void timeCardSetDB(String title, String id) {
-  String location = getLocation();
+Future<void> timeCardSetDB(String title, String id) async {
+  // String location = getLocation() as String;
+  // print(location);
+  Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best);
+  // print(position);
   // 現在の日時取得
   DateTime now = DateTime.now();
 
@@ -17,6 +21,7 @@ void timeCardSetDB(String title, String id) {
       .doc(days)
       .set({
         title: time,
-        SettingsFirebase.location: location
+        SettingsFirebase.locationLatitude: position.latitude,
+        SettingsFirebase.locationLongitude: position.longitude
         });
 }
