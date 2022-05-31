@@ -34,6 +34,5 @@ Future<Position> determinePosition() async {
 
   // ここまでたどり着くと、位置情報に対しての権限が許可されているということなので
   // デバイスの位置情報を返す。
-  print(Geolocator.getCurrentPosition());
   return await Geolocator.getCurrentPosition();
 }

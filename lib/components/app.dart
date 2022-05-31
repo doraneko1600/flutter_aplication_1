@@ -8,9 +8,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: _title,
-      home: BottomNavigation(),
+      // OSのダークモード対応
+      // theme: ThemeData.light(),
+      // darkTheme: ThemeData.dark(),
+      home: const BottomNavigation(),
     );
   }
 }
