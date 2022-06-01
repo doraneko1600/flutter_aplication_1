@@ -1,8 +1,5 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-// bodyを切り出し
-import 'body.dart';
-
 class UserPage extends StatefulWidget {
   const UserPage({Key? key}) : super(key: key);
 
