@@ -19,7 +19,7 @@ class _UserPageBodyState extends State<UserPageBody> {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              userInfoMethod(context),
+              userInfoMethod(context, userName, userEmail),
             ],
           ),
           Row(

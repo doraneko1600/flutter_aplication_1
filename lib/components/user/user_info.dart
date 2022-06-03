@@ -1,6 +1,6 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-Container userInfoMethod(BuildContext context) {
+Container userInfoMethod(BuildContext context, String userName, String userEmail) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 270,
