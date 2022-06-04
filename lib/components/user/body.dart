@@ -22,22 +22,23 @@ class _UserPageBodyState extends State<UserPageBody> {
               userInfoMethod(context, userName, userEmail),
             ],
           ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
-                child: Text(
-                  'Account Settings',
-                ),
-              ),
-            ],
-          ),
+
           ListView(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
+                    child: Text(
+                      'Account Settings',
+                    ),
+                  ),
+                ],
+              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -54,7 +55,8 @@ class _UserPageBodyState extends State<UserPageBody> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Icon(
                             Icons.subtitles_rounded,
                             color: Theme.of(context).primaryColor,
@@ -62,7 +64,8 @@ class _UserPageBodyState extends State<UserPageBody> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Text(
                             'Order History',
                           ),
@@ -88,10 +91,8 @@ class _UserPageBodyState extends State<UserPageBody> {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     decoration: BoxDecoration(
-
                       shape: BoxShape.rectangle,
                       border: Border.all(
-
                         width: 1,
                       ),
                     ),
@@ -110,7 +111,6 @@ class _UserPageBodyState extends State<UserPageBody> {
                           padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Text(
                             'My Settings',
-
                           ),
                         ),
                         Expanded(
@@ -118,7 +118,6 @@ class _UserPageBodyState extends State<UserPageBody> {
                             alignment: AlignmentDirectional(0.9, 0),
                             child: Icon(
                               Icons.chevron_right,
-
                               size: 18,
                             ),
                           ),
@@ -135,10 +134,8 @@ class _UserPageBodyState extends State<UserPageBody> {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     decoration: BoxDecoration(
-
                       shape: BoxShape.rectangle,
                       border: Border.all(
-
                         width: 1,
                       ),
                     ),
@@ -232,7 +229,7 @@ class _UserPageBodyState extends State<UserPageBody> {
                     },
                     child: Text(
                       'Log Out',
-                      ),
+                    ),
                   ),
                 ),
               ],
