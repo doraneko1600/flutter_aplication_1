@@ -42,6 +42,7 @@ export 'package:flutter_application_1/components/app.dart';
 export 'package:flutter_application_1/components/user/body.dart';
 export 'package:flutter_application_1/components/user/user.dart';
 export 'package:flutter_application_1/components/user/user_info.dart';
+export 'package:flutter_application_1/components/user/user_listview.dart';
 
 // ホームページ
 export 'package:flutter_application_1/components/home/body.dart';
