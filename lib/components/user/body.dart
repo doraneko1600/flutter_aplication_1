@@ -28,14 +28,18 @@ class _UserPageBodyState extends State<UserPageBody> {
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
+              Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
-                    child: Text(
-                      'Account Settings',
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
+                        child: Text(
+                          'Account Settings',
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
