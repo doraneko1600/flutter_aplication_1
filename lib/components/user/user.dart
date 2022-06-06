@@ -13,7 +13,7 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'UserPage',
+          UserPageConstant.userAppBar,
         ),
       ),
       body: const UserPageBody(),

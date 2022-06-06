@@ -1,6 +1,6 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-Row userListViewMethod(BuildContext context,) {
+Row userListViewMethod(BuildContext context, String text, IconData icon) {
   return Row(
     mainAxisSize: MainAxisSize.max,
     children: [
@@ -19,7 +19,7 @@ Row userListViewMethod(BuildContext context,) {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
               child: Icon(
-                Icons.subtitles_rounded,
+                icon,
                 color: Theme.of(context).primaryColor,
                 size: 24,
               ),
@@ -27,10 +27,10 @@ Row userListViewMethod(BuildContext context,) {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
               child: Text(
-                'Order History',
+                text,
               ),
             ),
-            Expanded(
+            const Expanded(
               child: Align(
                 alignment: AlignmentDirectional(0.9, 0),
                 child: Icon(
