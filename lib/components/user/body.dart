@@ -29,36 +29,33 @@ class _UserPageBodyState extends State<UserPageBody> {
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             children: [
-              userListViewMethod(context, UserPageConstant.userInfoText, UserPageConstant.userInfoIcon),
-              userListViewMethod(context, UserPageConstant.userInfoText, UserPageConstant.userInfoIcon),
-              userListViewMethod(context, UserPageConstant.userInfoText, UserPageConstant.userInfoIcon),
-              userListViewMethod(context, UserPageConstant.userInfoText, UserPageConstant.userInfoIcon),
+              userListViewMethod(
+                context,
+                UserPageConstant.userInfoText,
+                UserPageConstant.userInfoIcon
+              ),
+              userListViewMethod(
+                context,
+                UserPageConstant.userWorkingTimeText,
+                UserPageConstant.userWorkingTimeIcon
+              ),
+              userListViewMethod(
+                context,
+                UserPageConstant.userContactText,
+                UserPageConstant.userContactIcon
+              ),
             ],
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 20),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
-                    child: Text(
-                      'Log Out',
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 20),
+            child: userLogOutMethod(UserPageConstant.userLogOutText),
           ),
         ],
       ),
     );
   }
+
+  
 
   
 }

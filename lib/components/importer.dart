@@ -14,6 +14,7 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 
 // model内の関数
 export 'package:flutter_application_1/models/timecard.dart';
+export 'package:flutter_application_1/models/flag.dart';
 
 // config内の定数
 export 'package:flutter_application_1/configs/constant.dart';
@@ -43,8 +44,10 @@ export 'package:flutter_application_1/components/user/body.dart';
 export 'package:flutter_application_1/components/user/user.dart';
 export 'package:flutter_application_1/components/user/user_info.dart';
 export 'package:flutter_application_1/components/user/user_listview.dart';
+export 'package:flutter_application_1/components/user/user_logout.dart';
 
 // ホームページ
 export 'package:flutter_application_1/components/home/body.dart';
 export 'package:flutter_application_1/components/home/home.dart';
-export 'package:flutter_application_1/components/home/elevated_button.dart';
+export 'package:flutter_application_1/components/home/home_button.dart';
+export 'package:flutter_application_1/components/home/home_switch.dart';

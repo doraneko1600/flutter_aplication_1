@@ -16,7 +16,9 @@ class _HomePageState extends State<HomePage> {
           HomePageConstant.homeAppBar,
         ),
       ),
-      body: const HomePageBody(),
+      body: const Center(
+        child: HomePageBody(),
+      ),
     );
   }
 }
