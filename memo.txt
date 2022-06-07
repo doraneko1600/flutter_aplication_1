@@ -17,3 +17,5 @@ Appの使用
 ☆すること
 win用にdb接続設定
 →firebaseが対応してない(厳密にはflutterfire_cliがサポートしてない)
+SQliteに変更？
+NoSQLとRDBの比較。
