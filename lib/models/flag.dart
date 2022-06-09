@@ -7,16 +7,14 @@ void flagSet(int flag) {
       .set({'flag': flag});
 }
 
-int flagManagement() {
-  int flag = 2;
+void flagManagement() {
   firestore
       .collection(SettingsFirebase.collection)
       .doc('1')
       .get()
       .then((DocumentSnapshot snapshot) {
     flag = snapshot.get('flag');
-    // print("flag${flag}");
+    print("flag${flag}");
   });
   print(flag);
-  return flag;
 }

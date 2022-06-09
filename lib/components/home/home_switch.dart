@@ -1,7 +1,7 @@
 import 'package:flutter_application_1/components/importer.dart';
 
 homeSwitchMethod() {
-  int flag = flagManagement();
+  flagManagement();
   // flagManagement();
   switch (flag) {
     case 0:
