@@ -6,6 +6,7 @@ class SettingsFirebase {
   static const String locationLatitude = 'activeLocationLatitude';
   static const String locationLongitude = 'activeLocationLongitude';
 }
+final firestore = FirebaseFirestore.instance;
 
 // home page
 class HomePageConstant {

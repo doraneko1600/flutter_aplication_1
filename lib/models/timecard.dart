@@ -12,14 +12,14 @@ Future<void> timeCardSetDB(String title, String id) async {
   String days = DateFormat('MMdd').format(now);
   String time = DateFormat('HHmm').format(now);
 
-  FirebaseFirestore.instance
+  firestore
       .collection(SettingsFirebase.collection)
       .doc(id)
       .collection(year)
       .doc(days)
       .set({
-        title: time,
-        SettingsFirebase.locationLatitude: position.latitude,
-        SettingsFirebase.locationLongitude: position.longitude
-        });
+    title: time,
+    SettingsFirebase.locationLatitude: position.latitude,
+    SettingsFirebase.locationLongitude: position.longitude
+  });
 }
