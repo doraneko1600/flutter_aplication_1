@@ -9,13 +9,13 @@ void flagSet(int flag) {
 
 void flagManagement() {
   print("a${flag}");
-  firestore
-      .collection(SettingsFirebase.collection)
-      .doc('1')
-      .get()
-      .then((DocumentSnapshot snapshot) {
-    flag = snapshot.get('flag');
-    print("flag${flag}");
-  });
+  // firestore
+  //     .collection(SettingsFirebase.collection)
+  //     .doc('1')
+  //     .get()
+  //     .then((DocumentSnapshot snapshot) {
+  //   flag = snapshot.get('flag');
+  //   print("flag${flag}");
+  // });
   print("b${flag}");
 }

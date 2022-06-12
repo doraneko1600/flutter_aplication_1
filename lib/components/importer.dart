@@ -11,6 +11,7 @@ export 'package:google_fonts/google_fonts.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter_application_1/firebase_options.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
+// export 'package:firebase_auth/firebase_auth.dart';
 
 // config内の定数
 export 'package:flutter_application_1/configs/constant.dart';
