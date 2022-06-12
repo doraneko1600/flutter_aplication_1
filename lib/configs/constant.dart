@@ -40,4 +40,4 @@ class UserPageConstant {
   static const String userLogOutText = "ログアウト";
 }
 
-dynamic flag;
+// dynamic flag;

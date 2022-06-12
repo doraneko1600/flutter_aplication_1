@@ -12,12 +12,12 @@ export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter_application_1/firebase_options.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 
+// config内の定数
+export 'package:flutter_application_1/configs/constant.dart';
+
 // model内の関数
 export 'package:flutter_application_1/models/timecard.dart';
 export 'package:flutter_application_1/models/flag.dart';
-
-// config内の定数
-export 'package:flutter_application_1/configs/constant.dart';
 
 // 位置情報取得
 export 'package:geolocator/geolocator.dart';

@@ -8,6 +8,7 @@ void flagSet(int flag) {
 }
 
 void flagManagement() {
+  print("a${flag}");
   firestore
       .collection(SettingsFirebase.collection)
       .doc('1')
@@ -16,5 +17,5 @@ void flagManagement() {
     flag = snapshot.get('flag');
     print("flag${flag}");
   });
-  print(flag);
+  print("b${flag}");
 }
