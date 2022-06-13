@@ -5,6 +5,7 @@ homeSwitchMethod() {
   flagManagement();
   // flagManagement();
   print("c${flag}");
+  
   switch (flag) {
     case 0:
       return ElevatedButtonWidget(

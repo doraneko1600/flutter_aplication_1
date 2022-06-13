@@ -21,9 +21,6 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
       onPressed: () {
         timeCardSetDB(widget.title, id);
         flagSet(widget.flag);
-        setState(() {
-          print("set${flag}");
-        });
       },
       icon: Icon(
         widget.icon,
