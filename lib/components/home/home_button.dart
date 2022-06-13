@@ -1,26 +1,35 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-class ElevatedButtonWidget extends StatelessWidget {
-  const ElevatedButtonWidget(
+class ElevatedButtonWidget extends StatefulWidget {
+  final String title;
+  final IconData icon;
+  int flag;
+
+  ElevatedButtonWidget(
       {Key? key, required this.title, required this.icon, required this.flag})
       : super(key: key);
 
-  final String title;
-  final IconData icon;
-  final int flag;
+  @override
+  State<ElevatedButtonWidget> createState() => _ElevatedButtonWidgetState();
+}
+
+class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
   @override
   Widget build(BuildContext context) {
     String id = "1";
     return ElevatedButton.icon(
       onPressed: () {
-        timeCardSetDB(title, id);
-        flagSet(flag);
+        timeCardSetDB(widget.title, id);
+        flagSet(widget.flag);
+        setState(() {
+          print("set${flag}");
+        });
       },
       icon: Icon(
-        icon,
+        widget.icon,
       ),
       label: Text(
-        title,
+        widget.title,
       ),
     );
   }

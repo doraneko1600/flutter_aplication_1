@@ -31,8 +31,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'ホーム'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'アカウント'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: HomePageConstant.homeAppBar),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: UserPageConstant.userAppBar),
           ],
           type: BottomNavigationBarType.fixed,
         )
