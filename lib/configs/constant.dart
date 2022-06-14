@@ -1,5 +1,8 @@
 import 'package:flutter_application_1/components/importer.dart';
 
+// タブタイトル
+const String tabTitle = "出退勤アプリ";
+
 // firebase用定数
 class SettingsFirebase {
   static const String collection = 'test';

@@ -7,6 +7,9 @@ export 'package:provider/provider.dart';
 // フォント
 export 'package:google_fonts/google_fonts.dart';
 
+// 判定
+export 'package:flutter/foundation.dart';
+
 // firebase 関連
 export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter_application_1/firebase_options.dart';
