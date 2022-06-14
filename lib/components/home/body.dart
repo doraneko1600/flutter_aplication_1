@@ -12,8 +12,13 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: homeSwitchMethod(),
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: FutureBuilder(
+          future: flagManagement(),
+          builder: homeSwitchMethod(),
+          ),
       ),
     );
   }

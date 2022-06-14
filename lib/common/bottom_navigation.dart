@@ -10,8 +10,8 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   final _pageWidgets = [
     //bodyの部分をここで設定
-    const HomePage(),
-    const UserPage(),
+    HomePage(),
+    UserPage(),
   ];
 
   // 初期選択

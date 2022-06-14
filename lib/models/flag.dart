@@ -7,15 +7,20 @@ void flagSet(int flag) {
       .set({'flag': flag});
 }
 
-void flagManagement() {
-  print("a${flag}");
-  firestore
-      .collection(SettingsFirebase.collection)
-      .doc('1')
-      .get()
-      .then((DocumentSnapshot snapshot) {
-    flag = snapshot.get('flag');
-    print("flag${flag}");
-  });
-  print("b${flag}");
+Future<int> flagManagement() async {
+  print("mng-start:${flag}");
+  try {
+    await firestore
+        .collection(SettingsFirebase.collection)
+        .doc('1')
+        .get()
+        .then((DocumentSnapshot snapshot) {
+      flag = snapshot.get('flag');
+      print("flag:${flag}");
+    });
+  } catch (e) {
+    print(e);
+  }
+
+  return flag;
 }

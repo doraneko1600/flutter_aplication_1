@@ -1,18 +1,20 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-dynamic flag;
-homeSwitchMethod() {
-  flagManagement();
-  // flagManagement();
-  print("c${flag}");
-  
+homeSwitchMethod(){
   switch (flag) {
     case 0:
+      print("0");
+      break;
+    /*
       return ElevatedButtonWidget(
           title: HomePageConstant.homeGoToWorkText,
           icon: HomePageConstant.homeGoToWorkIcon,
-          flag: 1); //　出勤ボタン
+          flag: 1); // 出勤ボタン
+          */
     case 1:
+      print("1");
+      break;
+    /*
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -27,10 +29,18 @@ homeSwitchMethod() {
               flag: 2), // 休憩開始ボタン
         ],
       );
+      */
     case 2:
+      print("2");
+      break;
+    /*
       return ElevatedButtonWidget(
           title: HomePageConstant.homeBreakEndsText,
           icon: HomePageConstant.homeBreakEndsIcon,
           flag: 1); // 休憩終了ボタン
+          */
+    default:
+      print("switch:${flag}");
   }
+  return Text("data");
 }
