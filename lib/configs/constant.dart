@@ -12,6 +12,9 @@ class SettingsFirebase {
 
 final firestore = FirebaseFirestore.instance;
 
+// StreamController
+final streamController = StreamController<int>();
+
 // home page
 class HomePageConstant {
   static const String homeAppBar = "ホーム";

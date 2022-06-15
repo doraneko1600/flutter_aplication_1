@@ -15,10 +15,20 @@ class _HomePageBodyState extends State<HomePageBody> {
         onTap: () {
           FocusScope.of(context).unfocus();
         },
-        child: FutureBuilder(
-          future: flagManagement(),
-          builder: homeSwitchMethod(),
-          ),
+        child: StreamBuilder(
+          // stream: flagManagement(),
+          // stream: firestore.collection(SettingsFirebase.collection).doc('1').snapshot(),
+          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            // homeSwitchMethod();
+            print("builder:${snapshot}");
+            if (snapshot.hasData) {
+              // homeSwitchMethod(flag: snapshot);
+              return Text("${snapshot}");
+            } else {
+              return Text("データが存在しません${snapshot}");
+            }
+          },
+        ),
       ),
     );
   }

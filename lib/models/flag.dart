@@ -7,20 +7,17 @@ void flagSet(int flag) {
       .set({'flag': flag});
 }
 
-Future<int> flagManagement() async {
-  print("mng-start:${flag}");
-  try {
-    await firestore
-        .collection(SettingsFirebase.collection)
-        .doc('1')
-        .get()
-        .then((DocumentSnapshot snapshot) {
-      flag = snapshot.get('flag');
-      print("flag:${flag}");
-    });
-  } catch (e) {
-    print(e);
-  }
-
-  return flag;
+Stream<QuerySnapshot> flagManagement() async* {
+  print("start");
+  await Future<void>.delayed(const Duration(seconds: 1));
+  firestore
+      .collection(SettingsFirebase.collection)
+      .doc('1')
+      .snapshots()
+      .listen((DocumentSnapshot snapshot) {
+    flag = snapshot.get('flag');
+    print("mng:${snapshot.get('flag')}");
+    print("mng:${snapshot}");
+  });
+  print("flag:${flag}");
 }

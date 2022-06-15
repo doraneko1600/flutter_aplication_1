@@ -1,6 +1,6 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-homeSwitchMethod(){
+homeSwitchMethod({required int flag}){
   switch (flag) {
     case 0:
       print("0");
@@ -41,6 +41,6 @@ homeSwitchMethod(){
           */
     default:
       print("switch:${flag}");
+      return Text("data");
   }
-  return Text("data");
 }
