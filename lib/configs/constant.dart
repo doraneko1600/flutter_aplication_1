@@ -10,7 +10,7 @@ class SettingsFirebase {
   static const String locationLongitude = 'activeLocationLongitude';
 }
 
-final firestore = FirebaseFirestore.instance;
+FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 // StreamController
 final streamController = StreamController<int>();

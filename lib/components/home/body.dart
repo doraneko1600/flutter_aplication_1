@@ -15,9 +15,9 @@ class _HomePageBodyState extends State<HomePageBody> {
         onTap: () {
           FocusScope.of(context).unfocus();
         },
-        child: StreamBuilder(
+        child: StreamBuilder<QuerySnapshot>(
           // stream: flagManagement(),
-          stream: firestore.collection(SettingsFirebase.collection).doc('1').snapshots(),
+          stream: FirebaseFirestore.instance.collection(SettingsFirebase.collection).snapshots(),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             // homeSwitchMethod();
             print("builder:${snapshot}");
