@@ -1,46 +1,38 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-homeSwitchMethod({required int flag}){
-  switch (flag) {
-    case 0:
-      print("0");
-      break;
-    /*
-      return ElevatedButtonWidget(
+Stream<Widget> homeSwitchMethod({required int flag}) async* {
+  print("start method");
+   switch (flag) {
+    case 1:
+      yield ElevatedButtonWidget(
           title: HomePageConstant.homeGoToWorkText,
           icon: HomePageConstant.homeGoToWorkIcon,
-          flag: 1); // 出勤ボタン
-          */
-    case 1:
-      print("1");
-      break;
-    /*
-      return Column(
+          flag: 2); // 出勤ボタン
+          break;
+    case 2:
+      yield Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           ElevatedButtonWidget(
               title: HomePageConstant.homeLeavingWorkText,
               icon: HomePageConstant.homeLeavingWorkIcon,
-              flag: 0), // 退勤ボタン
+              flag: 1), // 退勤ボタン
           const SizedBox(height: 35.0),
           ElevatedButtonWidget(
               title: HomePageConstant.homeBreakBeginsText,
               icon: HomePageConstant.homeBreakBeginsIcon,
-              flag: 2), // 休憩開始ボタン
+              flag: 3), // 休憩開始ボタン
         ],
       );
-      */
-    case 2:
-      print("2");
       break;
-    /*
-      return ElevatedButtonWidget(
+    case 3:
+      yield ElevatedButtonWidget(
           title: HomePageConstant.homeBreakEndsText,
           icon: HomePageConstant.homeBreakEndsIcon,
-          flag: 1); // 休憩終了ボタン
-          */
+          flag: 3); // 休憩終了ボタン
+          break;
     default:
       print("switch:${flag}");
-      return Text("data");
+      yield Text("data");
   }
 }
