@@ -18,6 +18,10 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
   Widget build(BuildContext context) {
     String id = "1";
     return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.grey[300],
+        onPrimary: Colors.purple,
+      ),
       onPressed: () {
         timeCardSetDB(widget.title, id);
         flagSet(widget.flag);
