@@ -7,17 +7,11 @@ void flagSet(int flag) {
       .set({'flag': flag});
 }
 
-Stream<QuerySnapshot> flagManagement() async* {
+flagManagement() {
   print("start");
-  await Future<void>.delayed(const Duration(seconds: 1));
   firestore
       .collection(SettingsFirebase.collection)
       .doc('1')
-      .snapshots()
-      .listen((DocumentSnapshot snapshot) {
-    flag = snapshot.get('flag');
-    print("mng:${snapshot.get('flag')}");
-    print("mng:${snapshot}");
-  });
+      .snapshots();
   print("flag:${flag}");
 }

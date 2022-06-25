@@ -17,7 +17,7 @@ class _HomePageBodyState extends State<HomePageBody> {
         },
         child: StreamBuilder<DocumentSnapshot>(
           // stream: flagManagement(),
-          stream: FirebaseFirestore.instance
+          stream: firestore
               .collection(SettingsFirebase.collection)
               .doc('1')
               .snapshots(),

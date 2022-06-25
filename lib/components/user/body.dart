@@ -30,19 +30,19 @@ class _UserPageBodyState extends State<UserPageBody> {
             scrollDirection: Axis.vertical,
             children: [
               userListViewMethod(
-                context,
-                UserPageConstant.userInfoText,
-                UserPageConstant.userInfoIcon
+                context: context,
+                text: UserPageConstant.userInfoText,
+                icon: UserPageConstant.userInfoIcon
               ),
               userListViewMethod(
-                context,
-                UserPageConstant.userWorkingTimeText,
-                UserPageConstant.userWorkingTimeIcon
+                context: context,
+                text: UserPageConstant.userWorkingTimeText,
+                icon: UserPageConstant.userWorkingTimeIcon
               ),
               userListViewMethod(
-                context,
-                UserPageConstant.userContactText,
-                UserPageConstant.userContactIcon
+                context: context,
+                text: UserPageConstant.userContactText,
+                icon: UserPageConstant.userContactIcon
               ),
             ],
           ),

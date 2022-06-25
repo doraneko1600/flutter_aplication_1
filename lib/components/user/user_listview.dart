@@ -1,6 +1,6 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-Row userListViewMethod(BuildContext context, String text, IconData icon) {
+Row userListViewMethod({required BuildContext context, required String text, required IconData icon}) {
   return Row(
     mainAxisSize: MainAxisSize.max,
     children: [
