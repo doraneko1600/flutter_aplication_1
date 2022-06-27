@@ -1,6 +1,7 @@
 import 'package:flutter_application_1/components/importer.dart';
 
-Future<void> timeCardSetDB(String title, String id) async {
+Future<void> timeCardSetDB(
+    {required String title, required String id, required int flag}) async {
   Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
   // print(position);
@@ -12,14 +13,17 @@ Future<void> timeCardSetDB(String title, String id) async {
   String days = DateFormat('MMdd').format(now);
   String time = DateFormat('HHmm').format(now);
 
-  firestore
-      .collection(SettingsFirebase.collection)
-      .doc(id)
-      .collection(year)
-      .doc(days)
-      .set({
-    title: time,
-    SettingsFirebase.locationLatitude: position.latitude,
-    SettingsFirebase.locationLongitude: position.longitude
-  });
+
+    firestore
+        .collection(SettingsFirebase.collection)
+        .doc(id)
+        .collection(year)
+        .doc(days)
+        .set({
+      "$flag-$title": time,
+      "$flag-${SettingsFirebase.locationLatitude}": position.latitude,
+      "$flag-${SettingsFirebase.locationLongitude}": position.longitude,
+    },SetOptions(merge: true));
+
+
 }

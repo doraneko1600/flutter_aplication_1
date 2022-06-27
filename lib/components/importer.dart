@@ -38,6 +38,7 @@ export 'package:intl/intl.dart' hide TextDirection;
  * コモンフォルダ
  */
 export 'package:flutter_application_1/common/bottom_navigation.dart';
+export 'package:flutter_application_1/common/animated_button.dart';
 
 /**
  * コンポーネントフォルダ

@@ -23,7 +23,7 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
         onPrimary: Colors.purple,
       ),
       onPressed: () {
-        timeCardSetDB(widget.title, id);
+        timeCardSetDB(title: widget.title, id: id, flag: widget.flag);
         flagSet(widget.flag);
       },
       icon: Icon(

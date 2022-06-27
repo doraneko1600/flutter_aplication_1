@@ -30,30 +30,34 @@ class _HomePageBodyState extends State<HomePageBody> {
             print("builder:${flag}");
             switch (flag) {
               case 1:
-                return ElevatedButtonWidget(
+                return AnimatedButton(
                     title: HomePageConstant.homeGoToWorkText,
                     icon: HomePageConstant.homeGoToWorkIcon,
-                    flag: 2); // 出勤ボタン
+                    flag: 2,
+                    id: "1"); // 出勤ボタン
               case 2:
                 return Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ElevatedButtonWidget(
+                    AnimatedButton(
                         title: HomePageConstant.homeLeavingWorkText,
                         icon: HomePageConstant.homeLeavingWorkIcon,
-                        flag: 1), // 退勤ボタン
+                        flag: 1,
+                        id: "1"), // 退勤ボタン
                     const SizedBox(height: 35.0),
-                    ElevatedButtonWidget(
+                    AnimatedButton(
                         title: HomePageConstant.homeBreakBeginsText,
                         icon: HomePageConstant.homeBreakBeginsIcon,
-                        flag: 3), // 休憩開始ボタン
+                        flag: 3,
+                        id: "1"), // 休憩開始ボタン
                   ],
                 );
               case 3:
-                return ElevatedButtonWidget(
+                return AnimatedButton(
                     title: HomePageConstant.homeBreakEndsText,
                     icon: HomePageConstant.homeBreakEndsIcon,
-                    flag: 1); // 休憩終了ボタン
+                    flag: 2,
+                    id: "1"); // 休憩終了ボタン
             }
             return Text("flag${flag.toString()}");
           },

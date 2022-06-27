@@ -45,6 +45,7 @@ dependencies:
   firebase_core_desktop: ^1.0.0
   firebase_auth_desktop: ^1.0.0
   firebase_auth: ^3.3.19
+  styled_text: ^5.1.0
 
 dev_dependencies:
   flutter_test:
