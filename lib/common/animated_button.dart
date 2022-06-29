@@ -27,7 +27,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       lowerBound: 0.0,
       upperBound: 0.1,
     )..addListener(() {
@@ -69,7 +69,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
         height: 100,
         width: 250,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
               color: Color(0x80000000),

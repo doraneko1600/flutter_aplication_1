@@ -21,7 +21,10 @@ class _MainAppState extends State<MainApp> {
       // OSのダークモード対応
       // theme: ThemeData.light(),
       // darkTheme: ThemeData.dark(),
-      home: BottomNavigation(),
+      // home: BottomNavigation(),
+      routes: {
+        '/':(context) => BottomNavigation(),
+      },
     );
   }
 }
